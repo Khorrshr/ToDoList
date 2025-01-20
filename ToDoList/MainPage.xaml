@@ -3,9 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.MainPage">
     <VerticalStackLayout>
-        <RadioButton GroupName="group1" CheckedChanged="OnRadioButtonChecked">
+        <RadioButton GroupName="group1" CheckedChanged="OnRadioButtonChk">
             <RadioButton.Content>
                 <Label Text="Option 1" />
+            </RadioButton.Content>
+        </RadioButton>
+
+        <RadioButton GroupName="group1" CheckedChanged="OnRadioButtonChk">
+            <RadioButton.Content>
+                <Label Text="Option 2" />
             </RadioButton.Content>
         </RadioButton>
     </VerticalStackLayout>
