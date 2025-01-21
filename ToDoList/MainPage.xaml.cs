@@ -1,9 +1,12 @@
-﻿using Microsoft.Maui.Controls;//
+﻿using Microsoft.Maui.Controls;
 
 namespace ToDoList
 {
     public partial class MainPage : ContentPage
     {
+        private int taskCounter = 0;
+
+
         public MainPage()
         {
             InitializeComponent();
@@ -24,6 +27,23 @@ namespace ToDoList
             {
                 System.Diagnostics.Debug.WriteLine("Sender is not a Label.");
             }
+        }
+
+        void OnCreateTaskClicked(object sender, EventArgs e)
+        {
+            taskCounter++;
+            var newLabel = new Label
+            {
+                Text = $"Task {taskCounter}",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += OnLabelTapped;
+            newLabel.GestureRecognizers.Add(tapGestureRecognizer);
+
+            taskList.Children.Add(newLabel);
         }
 
         /*

@@ -18,17 +18,25 @@
     </VerticalStackLayout>
     -->
     <StackLayout>
-        <Label x:Name="label1" Text="Option 1" HorizontalOptions="Center" VerticalOptions="Center">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnLabelTapped" />
-            </Label.GestureRecognizers>
-        </Label>
-        <Label x:Name="label2" Text="Option 2" HorizontalOptions="Center" VerticalOptions="Center">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnLabelTapped" />
-            </Label.GestureRecognizers>
-        </Label>
-        <!-- Add more labels as needed -->
+
+        <Button Text="Create Task" Clicked="OnCreateTaskClicked" />
+
+        <StackLayout x:Name="taskList">
+            <Label x:Name="label1" Text="Test 1" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label x:Name="label2" Text="Test 2" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+
+        
+        
     </StackLayout>
 
 
