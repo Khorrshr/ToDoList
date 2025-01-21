@@ -13,12 +13,20 @@
             <!-- Existing labels will go here -->
         </StackLayout>
 
-        <HorizontalStackLayout Grid.Row="1" Margin="0,0,0,20" VerticalOptions="EndAndExpand">
-            <Entry x:Name="taskEntry" Placeholder="Enter task" WidthRequest="200" />
-            <Button Text="Create Task" Clicked="OnCreateTaskClicked" HorizontalOptions="CenterAndExpand"/>
-        </HorizontalStackLayout>
+        <Grid Grid.Row="1" Margin="0,0,0,20" VerticalOptions="EndAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-        
+            <Entry x:Name="taskEntry" Placeholder="Enter task" Grid.Column="0" HorizontalOptions="FillAndExpand" />
+
+            <Button Text="Create Task" Clicked="OnCreateTaskClicked" 
+                    Grid.Column="1" WidthRequest="130" 
+                    HorizontalOptions="Start" VerticalOptions="Center" />
+        </Grid>
+
+
     </Grid>
 
     <!-- 
