@@ -9,6 +9,24 @@ namespace ToDoList
             InitializeComponent();
         }
 
+        void OnLabelTapped(object sender, EventArgs e)
+        {
+            if (sender is Label label)
+            {
+                // Toggle the TextDecorations of the label
+                label.TextDecorations = label.TextDecorations == TextDecorations.Strikethrough
+                    ? TextDecorations.None
+                    : TextDecorations.Strikethrough;
+
+                System.Diagnostics.Debug.WriteLine($"Toggled: {label.Text} - State: {label.TextDecorations}");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Sender is not a Label.");
+            }
+        }
+
+        /*
         void OnRadioButtonChk(object sender, CheckedChangedEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("Event triggered");
@@ -29,5 +47,8 @@ namespace ToDoList
                 System.Diagnostics.Debug.WriteLine($"Content type: {radioButton.Content.GetType().Name}");
             }
         }
+        */
+
+
     }
 }
