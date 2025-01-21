@@ -13,34 +13,17 @@
             <!-- Existing labels will go here -->
         </StackLayout>
 
-        <Button Text="Create Task" Clicked="OnCreateTaskClicked" 
-                Grid.Row="1" HorizontalOptions="Center" Margin="0,0,0,20"/>
+        <HorizontalStackLayout Grid.Row="1" Margin="0,0,0,20" VerticalOptions="EndAndExpand">
+            <Entry x:Name="taskEntry" Placeholder="Enter task" WidthRequest="200" />
+            <Button Text="Create Task" Clicked="OnCreateTaskClicked" HorizontalOptions="CenterAndExpand"/>
+        </HorizontalStackLayout>
+
+        
     </Grid>
 
     <!-- 
-    
- 
-    <VerticalStackLayout>
-
-        <StackLayout x:Name="taskList">
-            <Label x:Name="label1" Text="Test 1" HorizontalOptions="Center" VerticalOptions="Center">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnLabelTapped" />
-                </Label.GestureRecognizers>
-            </Label>
-            <Label x:Name="label2" Text="Test 2" HorizontalOptions="Center" VerticalOptions="Center">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnLabelTapped" />
-                </Label.GestureRecognizers>
-            </Label>
-        </StackLayout>
-
-        <Button Text="Create Task" Clicked="OnCreateTaskClicked" VerticalOptions="EndAndExpand" HorizontalOptions="Center" />
-
-
-
-
-    </VerticalStackLayout>
+    <Button Text="Create Task" Clicked="OnCreateTaskClicked" 
+        Grid.Row="1" HorizontalOptions="Center" Margin="0,0,0,20"/>
        -->
 
 

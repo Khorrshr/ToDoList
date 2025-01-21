@@ -4,9 +4,6 @@ namespace ToDoList
 {
     public partial class MainPage : ContentPage
     {
-        private int taskCounter = 0;
-
-
         public MainPage()
         {
             InitializeComponent();
@@ -16,59 +13,35 @@ namespace ToDoList
         {
             if (sender is Label label)
             {
-                // Toggle the TextDecorations of the label
                 label.TextDecorations = label.TextDecorations == TextDecorations.Strikethrough
                     ? TextDecorations.None
                     : TextDecorations.Strikethrough;
 
                 System.Diagnostics.Debug.WriteLine($"Toggled: {label.Text} - State: {label.TextDecorations}");
             }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("Sender is not a Label.");
-            }
         }
 
         void OnCreateTaskClicked(object sender, EventArgs e)
         {
-            taskCounter++;
-            var newLabel = new Label
+            string taskText = taskEntry.Text;
+            if (!string.IsNullOrWhiteSpace(taskText))
             {
-                Text = $"Task {taskCounter}",
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center
-            };
+                var newLabel = new Label
+                {
+                    Text = taskText,
+                    HorizontalOptions = LayoutOptions.Center,
+                    VerticalOptions = LayoutOptions.Center
+                };
 
-            var tapGestureRecognizer = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += OnLabelTapped;
-            newLabel.GestureRecognizers.Add(tapGestureRecognizer);
+                var tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += OnLabelTapped;
+                newLabel.GestureRecognizers.Add(tapGestureRecognizer);
 
-            taskList.Children.Add(newLabel);
-        }
+                taskList.Children.Add(newLabel);
 
-        /*
-        void OnRadioButtonChk(object sender, CheckedChangedEventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine("Event triggered");
-            RadioButton radioButton = (RadioButton)sender;
-
-            if (radioButton.Content is Label label)
-            {
-                System.Diagnostics.Debug.WriteLine($"Before toggle: {label.TextDecorations}");
-                label.TextDecorations = label.TextDecorations == TextDecorations.Strikethrough
-                    ? TextDecorations.None
-                    : TextDecorations.Strikethrough;
-                System.Diagnostics.Debug.WriteLine($"After toggle: {label.TextDecorations}");
-                System.Diagnostics.Debug.WriteLine($"Option toggled: {label.Text}");
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("Content is not a Label");
-                System.Diagnostics.Debug.WriteLine($"Content type: {radioButton.Content.GetType().Name}");
+                // Clear the text field after adding the task
+                taskEntry.Text = string.Empty;
             }
         }
-        */
-
-
     }
 }
