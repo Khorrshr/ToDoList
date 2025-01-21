@@ -23,6 +23,16 @@ namespace ToDoList
 
         void OnCreateTaskClicked(object sender, EventArgs e)
         {
+            CreateTask();
+        }
+
+        void OnTaskEntryCompleted(object sender, EventArgs e)  // This method is called when Enter is pressed
+        {
+            CreateTask();
+        }
+
+        private void CreateTask()
+        {
             string taskText = taskEntry.Text;
             if (!string.IsNullOrWhiteSpace(taskText))
             {

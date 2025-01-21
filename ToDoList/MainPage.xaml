@@ -19,7 +19,9 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Entry x:Name="taskEntry" Placeholder="Enter task" Grid.Column="0" HorizontalOptions="FillAndExpand" />
+            <Entry x:Name="taskEntry" Placeholder="Enter task" Grid.Column="0" 
+                   HorizontalOptions="FillAndExpand" 
+                   Completed="OnTaskEntryCompleted"/>
 
             <Button Text="Create Task" Clicked="OnCreateTaskClicked" 
                     Grid.Column="1" WidthRequest="130" 
