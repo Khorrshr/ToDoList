@@ -53,5 +53,10 @@ namespace ToDoList
                 taskEntry.Text = string.Empty;
             }
         }
+
+        void OnClearAllClicked(object sender, EventArgs e)
+        {
+            taskList.Children.Clear(); // This removes all children from the taskList
+        }
     }
 }
