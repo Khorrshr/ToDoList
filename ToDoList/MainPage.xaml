@@ -2,24 +2,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToDoList.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackLayout x:Name="taskList" Grid.Row="0">
+            <!-- Existing labels will go here -->
+        </StackLayout>
+
+        <Button Text="Create Task" Clicked="OnCreateTaskClicked" 
+                Grid.Row="1" HorizontalOptions="Center" Margin="0,0,0,20"/>
+    </Grid>
+
     <!-- 
+    
+ 
     <VerticalStackLayout>
-        <RadioButton GroupName="group1" CheckedChanged="OnRadioButtonChk">
-            <RadioButton.Content>
-                <Label Text="Option 1" />
-            </RadioButton.Content>
-        </RadioButton>
-
-        <RadioButton GroupName="group1" CheckedChanged="OnRadioButtonChk">
-            <RadioButton.Content>
-                <Label Text="Option 2" />
-            </RadioButton.Content>
-        </RadioButton>
-    </VerticalStackLayout>
-    -->
-    <StackLayout>
-
-        <Button Text="Create Task" Clicked="OnCreateTaskClicked" />
 
         <StackLayout x:Name="taskList">
             <Label x:Name="label1" Text="Test 1" HorizontalOptions="Center" VerticalOptions="Center">
@@ -34,10 +35,13 @@
             </Label>
         </StackLayout>
 
+        <Button Text="Create Task" Clicked="OnCreateTaskClicked" VerticalOptions="EndAndExpand" HorizontalOptions="Center" />
 
-        
-        
-    </StackLayout>
+
+
+
+    </VerticalStackLayout>
+       -->
 
 
 </ContentPage>
