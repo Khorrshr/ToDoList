@@ -7,14 +7,19 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!-- Top Right Corner Buttons -->
-        <StackLayout Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start" Orientation="Horizontal" Margin="0,20,20,0">
-            <Button Text="Clear Done" Margin="0,0,5,0"/>
-            <Button Text="Clear All" Clicked="OnClearAllClicked" />
-        </StackLayout>
-
+        <!-- Task List -->
         <StackLayout x:Name="taskList" Grid.Row="0">
             <!-- Existing labels will go here -->
+        </StackLayout>
+
+        <!-- Top Right Corner Buttons -->
+        <StackLayout Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start" Orientation="Horizontal" Margin="0,20,20,0">
+            <Button 
+                Text="Clear Done" Clicked="OnClearDoneClicked"
+                WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,5,0" />
+            <Button
+                Text="Clear All" Clicked="OnClearAllClicked"
+                WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Center" />
         </StackLayout>
 
         <Grid Grid.Row="1" Margin="0,0,0,20" VerticalOptions="EndAndExpand">

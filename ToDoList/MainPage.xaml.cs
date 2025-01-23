@@ -56,7 +56,29 @@ namespace ToDoList
 
         void OnClearAllClicked(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("Clear All Button Clicked");
             taskList.Children.Clear(); // This removes all children from the taskList
+        }
+
+        void OnClearDoneClicked(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Clear Done Button Clicked");
+            // We'll use a list to store labels to remove because we can't modify the collection while iterating over it
+            List<View> labelsToRemove = new List<View>();
+
+            foreach (View child in taskList.Children)
+            {
+                if (child is Label label && label.TextDecorations == TextDecorations.Strikethrough)
+                {
+                    labelsToRemove.Add(child);
+                }
+            }
+
+            // Now remove all labels that were marked for removal
+            foreach (View label in labelsToRemove)
+            {
+                taskList.Children.Remove(label);
+            }
         }
     }
 }
