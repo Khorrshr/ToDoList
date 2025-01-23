@@ -60,7 +60,7 @@ namespace ToDoList
             taskList.Children.Clear(); // This removes all children from the taskList
                 }
 
-        void OnClearDoneClicked(object sender, EventArgs e)
+        void OnClearDoneClicked(object sender, EventArgs e) 
         {
             System.Diagnostics.Debug.WriteLine("Clear Done Button Clicked");
             // We'll use a list to store labels to remove because we can't modify the collection while iterating over it
