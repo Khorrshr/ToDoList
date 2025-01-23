@@ -22,7 +22,7 @@ namespace ToDoList
         }
 
         void OnCreateTaskClicked(object sender, EventArgs e)
-        {
+            {
             CreateTask();
         }
 
@@ -55,10 +55,10 @@ namespace ToDoList
         }
 
         void OnClearAllClicked(object sender, EventArgs e)
-        {
+                {
             System.Diagnostics.Debug.WriteLine("Clear All Button Clicked");
             taskList.Children.Clear(); // This removes all children from the taskList
-        }
+                }
 
         void OnClearDoneClicked(object sender, EventArgs e)
         {
@@ -72,7 +72,7 @@ namespace ToDoList
                 {
                     labelsToRemove.Add(child);
                 }
-            }
+                }
 
             // Now remove all labels that were marked for removal
             foreach (View label in labelsToRemove)
